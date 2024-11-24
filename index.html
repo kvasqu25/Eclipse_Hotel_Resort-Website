@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Treats Bakery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Sweet Treats Bakery</h1>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to Sweet Treats Bakery! We create fresh, delicious baked goods daily.</p>
+        </section>
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <div id="menu-content">
+                <!-- Content will load dynamically using AJAX -->
+            </div>
+        </section>
+        <section id="carousel">
+            <h2>Featured Treats</h2>
+            <div class="slideshow">
+                <div><img src="images/cupcake1.jpg" alt="Cupcake"></div>
+                <div><img src="images/cupcake2.jpg" alt="Cake"></div>
+                <div><img src="images/cupcake3.jpg" alt="Cookie"></div>
+            </div>
+        </section>
+        <section id="user-preference">
+            <h2>Save Your Favorite Treat</h2>
+            <form id="preference-form">
+                <label for="favorite">Your Favorite Treat:</label>
+                <input type="text" id="favorite" placeholder="e.g., Chocolate Cake">
+                <button type="submit">Save</button>
+            </form>
+            <p id="saved-favorite"></p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Sweet Treats Bakery</p>
+    </footer>
+</body>
+</html>
