@@ -1,64 +1,53 @@
-$(document).ready(function() {
-    $('.slideshow').slick({
-        autoplay: true,
-        autoplaySpeed: 3000,
-        dots: true
-    });
-});
-$(document).ready(function() {
-    $.ajax({
-        url: 'data/menu.json', // Example JSON file
-        method: 'GET',
-        dataType: 'json',
-        success: function(data) {
-            let content = '';
-            data.menu.forEach(item => {
-                content += `
-                    <div>
-                        <h3>${item.name}</h3>
-                        <p>${item.description}</p>
-                        <p><strong>Price:</strong> $${item.price}</p>
-                    </div>
-                `;
-            });
-            $('#menu-content').html(content);
-        },
-        error: function() {
-            $('#menu-content').html('<p>Unable to load the menu at this time.</p>');
-        }
-    });
-});
-$('#preference-form').on('submit', function(e) {
-    e.preventDefault();
-    const favorite = $('#favorite').val();
-    if (favorite) {
-        localStorage.setItem('favoriteTreat', favorite);
-        $('#saved-favorite').text(`Your favorite treat is: ${favorite}`);
-    }
-});
+document.addEventListener("DOMContentLoaded", () => {
+    const prevButton = document.querySelector(".slider--btn__prev");
+    const nextButton = document.querySelector(".slider--btn__next");
+    const slides = document.querySelectorAll(".slide");
+    const slideInfos = document.querySelectorAll(".slide-info");
+    
+    let currentIndex = 0;
 
-$(document).ready(function() {
-    const savedFavorite = localStorage.getItem('favoriteTreat');
-    if (savedFavorite) {
-        $('#saved-favorite').text(`Your favorite treat is: ${savedFavorite}`);
-    }
-});
-{
-    "menu": [
-        {
-            "name": "Chocolate Cake",
-            "description": "Rich and creamy chocolate cake.",
-            "price": 12.99
-        },
-        {
-            "name": "Vanilla Cupcake",
-            "description": "Classic vanilla cupcakes with buttercream frosting.",
-            "price": 3.99
-        },
-        {
-            "name": "Oatmeal Cookie",
-            "description": "Chewy and sweet oatmeal cookies with raisins.",
-            "price": 1.99
+    const updateSlides = () => {
+        slides.forEach((slide, index) => {
+            slide.setAttribute("data-current", false);
+            slide.setAttribute("data-next", false);
+            slide.setAttribute("data-previous", false);
+        });
+
+        slideInfos.forEach((info, index) => {
+            info.setAttribute("data-current", false);
+            info.setAttribute("data-next", false);
+            info.setAttribute("data-previous", false);
+        });
+
+        slides[currentIndex].setAttribute("data-current", true);
+        slideInfos[currentIndex].setAttribute("data-current", true);
+
+        if (currentIndex + 1 < slides.length) {
+            slides[currentIndex + 1].setAttribute("data-next", true);
+            slideInfos[currentIndex + 1].setAttribute("data-next", true);
+        } else {
+            slides[0].setAttribute("data-next", true);
+            slideInfos[0].setAttribute("data-next", true);
         }
-    ]
-}
+
+        if (currentIndex - 1 >= 0) {
+            slides[currentIndex - 1].setAttribute("data-previous", true);
+            slideInfos[currentIndex - 1].setAttribute("data-previous", true);
+        } else {
+            slides[slides.length - 1].setAttribute("data-previous", true);
+            slideInfos[slides.length - 1].setAttribute("data-previous", true);
+        }
+    };
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlides();
+    });
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlides();
+    });
+
+    updateSlides(); // Initial update
+});

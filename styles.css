@@ -1,33 +1,275 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
+* {
     padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    background: #f8b400;
-    color: white;
-    padding: 1em 0;
+    margin: 0;
     text-align: center;
 }
 
-nav a {
-    margin: 0 10px;
-    color: white;
+header {
+    font-weight: bold;
+    background-color: #242323;
+    color: #9E9E9E;
+    padding: 1.3em 0;
+}
+
+/*MAIN*/
+.main {
+    background-color: #F9DB79;
+    color: #fff;
+}
+
+.main h1 {
+    font-family: 'Pacifico', cursive;
+    font-style: italic;
+    color: #000000;
+}
+
+p span {
+    display: block;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+span.helado {
+    font-size: 5.5em;
+}
+
+/*SABORES*/
+.chocolate {
+    background-image: url("https://static.wixstatic.com/media/baac51_dce92e80d8174b64b0505698a8444b3d.jpg/v1/fill/w_1539,h_651,al_c,q_85,usm_0.66_1.00_0.01/baac51_dce92e80d8174b64b0505698a8444b3d.webp");
+    background-position: top center;
+    height: 500px;
+}
+
+.sabores h2, .lugar h2 {
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+.sabores h3, .lugar h3 {
+    font-family: Yesteryear;
+    font-size: 1.9em;
+}
+
+.sabores p, .lugar p {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 1.2em;
+    margin: 2em;
+}
+
+.sabores a, .lactosa a, .lugar a, .eventos a {
+    padding: 0.3em 2.2em;
+    color: #484747;
+    border: 2px solid #484747;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 1.6em;
+    transition: all 1s;
+    display: inline-block;
+    margin: 1em;
+}
+
+.sabores a:hover, .lactosa a:hover, .eventos a:hover, .lugar a:hover {
+    color: #fff;
+    background: #484747;
     text-decoration: none;
 }
 
-section {
-    padding: 20px;
-    margin: 10px auto;
-    max-width: 800px;
-    background: #f4f4f4;
+/*LACTOSA*/
+.lactosa {
+    background: url("http://pngimg.com/uploads/ice_cream/ice_cream_PNG20992.png") bottom center no-repeat, #B5E8D5;
+    background-attachment: fixed;
+    text-transform: uppercase;
+    height: 500px;
+    color: #fff;
+    padding-top: 3em;
 }
 
-.slideshow img {
+.lactosa p, .eventos p {
+    font-size: 4em;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5em;
+}
+
+.lactosa a, .eventos a {
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.lactosa a:hover {
+    background: #fff;
+    color: #484747;
+}
+
+/*Lugares*/
+.parque {
+    background-image:url(https://static.wixstatic.com/media/84770f_63ca1eacd5f54763a266562f45c05727.jpg/v1/fill/w_1344,h_650,al_c,q_85,usm_0.66_1.00_0.01/84770f_63ca1eacd5f54763a266562f45c05727.webp);
+    height: 600px;
+}
+
+/*EVENTOS*/
+.eventos {
+    background: url("https://cdn.vox-cdn.com/thumbor/qSDqz4aMxBl17Of-tieHqF30pTs=/309x0:3968x2744/1200x900/filters:focal(309x0:3968x2744):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/69819946/GettyImages_982973140.0.jpg") top center no-repeat, #F6D8AD;
+    height: 600px;
+}
+
+/* Import fonts */
+@import url("https://api.fontshare.com/v2/css?f[]=archivo@100,200,300,400,500,600,700,800,900&f[]=clash-display@200,300,400,500,600,700&display=swap");
+
+:root {
+    --slide-width: min(25vw, 300px);
+    --slide-aspect: 2 / 3;
+    --slide-transition-duration: 800ms;
+    --slide-transition-easing: ease;
+    --font-archivo: "Archivo", sans-serif;
+    --font-clash-display: "Clash Display", sans-serif;
+}
+
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
     width: 100%;
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.787);
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+    border: none;
+} */
+
+/* Slider */
+.slider {
+    width: calc(3 * var(--slide-width));
+    height: calc(2 * var(--slide-width));
+    display: flex;
+    align-items: center;
+}
+
+.slider--btn {
+    --size: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    z-index: 999;
+}
+
+.slider--btn svg {
+    width: var(--size);
+    height: var(--size);
+    stroke: white;
+}
+
+.slider--btn:hover {
+    opacity: 1;
+}
+
+.slides__wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.slides,
+.slides--infos {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: grid;
+    place-items: center;
+}
+
+.slide {
+    width: var(--slide-width);
     height: auto;
+    aspect-ratio: var(--slide-aspect);
+    user-select: none;
+    perspective: 800px;
+    transform: perspective(1000px) translate3d(0, 0, 0);
+    transition: transform var(--slide-transition-duration) var(--slide-transition-easing);
+}
+
+.slide[data-current] {
+    transform: scale(1.2);
+    pointer-events: auto;
+}
+
+.slide[data-next] {
+    transform: translateX(calc(1 * var(--slide-width) * 1.07)) rotateY(-45deg);
+}
+
+.slide[data-previous] {
+    transform: translateX(calc(-1 * var(--slide-width) * 1.07)) rotateY(45deg);
+}
+
+.slide:not([data-current]) {
+    pointer-events: none;
+}
+
+.slide__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide--image__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide--image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    transform: translate(-50%, -50%) scale(1.25);
+}
+
+.slide__bg {
+    position: fixed;
+    inset: -20%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+
+
+
+
+footer {
+    background-color: #242323;
+    color: #9E9E9E;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    padding: 1.5em 0;
 }
