@@ -6,16 +6,20 @@
   <title>Hotel</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/6685965caf.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head><body class="container">
   <header class="header">
-    <div class="logo"><span>Hotel</span></div>
+    <div class="logo">
+      <img src="photos-videos/hotelLogophoto.png" alt="Hotel Logo" class="Logo">
+    </div>
     <div class="menu">
       <nav>
         <ul>
-          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Hotel</a></li>
           <li><a href="#casino">Casino</a></li>
           <li><a href="#ameni">Amenities</a></li>
-          <li><a href="#depo">Depoimentos</a></li>
+          <li><a href="#explore">Explore</a></li>
           <li><a href="#booking">Booking</a></li>
         </ul>
       </nav>
@@ -29,9 +33,13 @@
   </header>
   <main class="content">
     <section class="hero">
+      <video class="background-video" autoplay loop muted playsinline>
+        <source src="photos-videos/roomVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="wrapper">
         <div class="title">
-          <h1>Hotel</h1>
+          <h1>Rooms and Suites</h1>
         </div>
         <div class="subtitle">
           <h2>Melhor hotel de todos</h2>
@@ -89,7 +97,7 @@
         <button type="button" name="book-tel">Ligue-nos</button>
       </div>
     </section>
-    <section class="section-d" id="serv">
+    <section class="section-d" id="ameni">
       <div class="title">
         <h2>Serviços</h2>
       </div>
@@ -129,12 +137,11 @@
         <button type="button" name="book">Book Now</button>
       </div>
     </section>
-    <section class="section-e" id="depo">
-      <div class="wrapper">
-        <h2>Depoimentos</h2>
-        <blockquote><i class="fa fa-quote-left fa-2x"> </i><span>Robert Delnilo</span>
-          <p>Eu fui neste hotel e me surprendi com o que vi ao passar o fim de semana por lá... div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste consequuntur error natus iure aut, ipsum vel incidunt maiores rem? Iusto? div Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta aspernatur rerum ut consectetur, quo natus.</p>
-        </blockquote>
+    <section class="section-e" id="explore">
+      <div id="dynamic-content">
+        <h2>Explore Nearby Restaurants</h2>
+        <ul id="content-list"></ul>
+        <button id="load-more" class="btn">Load More</button>
       </div>
     </section>
     <section class="section-f" id="booking">
