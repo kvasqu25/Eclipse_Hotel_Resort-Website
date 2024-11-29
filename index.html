@@ -1,215 +1,174 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helados</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-
-    <!-- Include Font Awesome for icons (social media icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
-
-    <!--HEADER-->
-    <header>
-        <div class="container-fluid">
-            <p>Av. Los Rosales 122 Madrid, CP 28021  |  Todos los Días 10AM-10PM</p>
-        </div>  
-    </header>
-
-    <!--MAIN-->
-    <div class="main">
-        <div class="container-fluid">
-            <h1>Helados</h1>
-            <img src="https://static.wixstatic.com/media/84770f_bdcc40e3b5ce45f4b672692e83f4917b~mv1.png/v1/fill/w_293,h_575,al_c,usm_0.66_1.00_0.01/84770f_bdcc40e3b5ce45f4b672692e83f4917b~mv1.png" alt="icecream">
-            <p><span>Artesanal</span><span class="helado"> Helado</span></p>
-        </div>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/6685965caf.js" crossorigin="anonymous"></script>
+</head><body class="container">
+  <header class="header">
+    <div class="logo"><span>Hotel</span></div>
+    <div class="menu">
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#casino">Casino</a></li>
+          <li><a href="#ameni">Amenities</a></li>
+          <li><a href="#depo">Depoimentos</a></li>
+          <li><a href="#booking">Booking</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <!--SECTIONS-->
-    <section class="sabores" id="sabores">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 chocolate"></div>
-                <div class="col-xs-12 col-md-6">
-                    <h2>Nuestros</br> Sabores</h2>
-                    <h3>¡Frescos y sabrosos!</h3>
-                    <p>Párrafo. Haz clic aquí para agregar tu propio texto y editar. Es fácil. Haz clic en Editar Texto o doble clic aquí para agregar tu contenido y cambiar la fuente.</p>
-                    <a href="#">Menú</a>
-                </div>
-            </div>  
-        </div>  
-    </section>
-
-    <section class="lactosa">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2>Disfruta</h2>
-                    <p>Libre de</br> Lactosa</p>
-                    <a href="#">Menú</a>
-                </div>  
-            </div>  
-        </div>  
-    </section>
-
-    <section class="lugar">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <h2>NUESTRO LUGAR</h2>
-                    <h3>Helado frente al mar</h3>
-                    <p>Párrafo. Haz clic aquí para agregar tu propio texto y editar. Es fácil. Haz clic en Editar Texto o doble clic aquí para agregar tu contenido y cambiar la fuente.</p>
-                    <a href="#">Leer más</a>
-                </div>
-                <div class="col-xs-12 col-md-6 parque"></div>
-            </div>  
-        </div>  
-    </section>
-
-    <section class="eventos" id="eventos">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2>CATERING & MÁS</h2>
-                    <p>eventOs</p>
-                    <a href="#">Pide un deseo</a>
-                </div>  
-            </div>  
-        </div>  
-    </section>
-
-<section>
-    <div class="slider">
-        <button class="slider--btn slider--btn__prev">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m15 18-6-6 6-6" />
-            </svg>
-        </button>
-    
-        <div class="slides__wrapper">
-            <div class="slides">
-                <!-- slide 1 -->
-                <div class="slide" data-current>
-                    <div class="slide__inner">
-                        <div class="slide--image__wrapper">
-                            <img class="slide--image" src="https://devloop01.github.io/voyage-slider/images/scotland-mountains.jpg" alt="Image 1" />
-                        </div>
-                    </div>
-                </div>
-                <div class="slide__bg" style="--bg: url(https://devloop01.github.io/voyage-slider/images/scotland-mountains.jpg); --dir: 0" data-current></div>
-    
-                <!-- slide 2 -->
-                <div class="slide" data-next>
-                    <div class="slide__inner">
-                        <div class="slide--image__wrapper">
-                            <img class="slide--image" src="
-    https://devloop01.github.io/voyage-slider/images/machu-pichu.jpg" alt="Image 2" />
-                        </div>
-                    </div>
-                </div>
-                <div class="slide__bg" style="--bg: url(https://devloop01.github.io/voyage-slider/images/machu-pichu.jpg); --dir: 1" data-next></div>
-    
-                <!-- slide 3 -->
-                <div class="slide" data-previous>
-                    <div class="slide__inner">
-                        <div class="slide--image__wrapper">
-                            <img class="slide--image" src="https://devloop01.github.io/voyage-slider/images/chamonix.jpg" alt="Image 3" />
-                        </div>
-                    </div>
-                </div>
-                <div class="slide__bg" style="--bg: url(https://devloop01.github.io/voyage-slider/images/chamonix.jpg); --dir: -1" data-previous></div>
-            </div>
-            <div class="slides--infos">
-                <!-- Slide Info 1 -->
-                <div class="slide-info" data-current>
-                    <div class="slide-info__inner">
-                        <div class="slide-info--text__wrapper">
-                            <div data-title class="slide-info--text">
-                                <span>Highlands</span>
-                            </div>
-                            <div data-subtitle class="slide-info--text">
-                                <span>Scotland</span>
-                            </div>
-                            <div data-description class="slide-info--text">
-                                <span>The mountains are calling</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Slide Info 2 -->
-                <div class="slide-info" data-next>
-                    <div class="slide-info__inner">
-                        <div class="slide-info--text__wrapper">
-                            <div data-title class="slide-info--text">
-                                <span>Machu Pichu</span>
-                            </div>
-                            <div data-subtitle class="slide-info--text">
-                                <span>Peru</span>
-                            </div>
-                            <div data-description class="slide-info--text">
-                                <span>Adventure is never far away</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Slide Info 3 -->
-                <div class="slide-info" data-previous>
-                    <div class="slide-info__inner">
-                        <div class="slide-info--text__wrapper">
-                            <div data-title class="slide-info--text">
-                                <span>Chamonix</span>
-                            </div>
-                            <div data-subtitle class="slide-info--text">
-                                <span>France</span>
-                            </div>
-                            <div data-description class="slide-info--text">
-                                <span>Let your dreams come true</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="right-side">
+      <ul>
+        <li><i class="fa fa-adjust">&nbsp;contrast</i></li>
+        <li><i class="fa fa-sign-in">&nbsp;sign-in</i></li>
+      </ul>
+    </div>
+  </header>
+  <main class="content">
+    <section class="hero">
+      <div class="wrapper">
+        <div class="title">
+          <h1>Hotel</h1>
         </div>
-    
-        <button class="slider--btn slider--btn__next">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m9 18 6-6-6-6" />
-            </svg>
-        </button>
-    </div>
-    
-    <div class="loader">
-        <span class="loader__text">0%</span>
-    </div>
-    
-    <div class="support">
-        <a href="https://twitter.com/DevLoop01" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-            </svg>
-        </a>
-        <a href="https://github.com/devloop01/voyage-slider" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                <path d="M9 18c-4.51 2-5-2-7-2" />
-            </svg>
-        </a>
-    </div>
-</section>
-
-    
-
-    <!--FOOTER-->
-    <footer>
-        <div class="container-fluid">
-            <p>© 2024 Helados, Todos los derechos reservados</p>
-        </div>  
-    </footer>
-
+        <div class="subtitle">
+          <h2>Melhor hotel de todos</h2>
+        </div>
+        <div class="text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="btn">
+          <button type="button" name="book-online">Book online</button>
+          <button type="button" name="book-tel">Ligue-nos</button></button>
+        </div>
+        <div class="slide"><i class="fa fa-circle-o">&nbsp;</i><i class="fa fa-circle">&nbsp;</i><i class="fa fa-circle"></i></div>
+      </div>
+    </section>
+    <section class="section-a">
+      <div class="section-a-wrapper">
+        <div class="title">
+          <h2>Bem vindo</h2>
+        </div>
+        <div>
+          <p>
+             O hotel San Diego é um dos mais antigos da cidade do Novo Mexico, mas aliado ao que há de contemporâneo, você não se sentirá em um local parado no tempo. Portanto, seja bem vindo!</p>
+        </div>
+        <div>
+          <button type="button" name="book">Book</button>
+        </div>
+      </div>
+    </section>
+    <section class="section-b" id="casino">
+      <div><img src="https://static.pexels.com/photos/280492/pexels-photo-280492.jpeg"/>
+        <h3>Localizacão</h3>
+        <p>
+           O hotel fica situado....Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <button type="button" name="button">Veja</button>
+      </div>
+      <div><img src="https://static.pexels.com/photos/279813/pexels-photo-279813.jpeg"/>
+        <h3>Interior</h3>
+        <p>
+           O hotel fica situado....Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <button type="button" name="button">Conheça</button>
+      </div>
+      <div><img src="https://static.pexels.com/photos/90319/pexels-photo-90319.jpeg"/>
+        <h3>Mobilia</h3>
+        <p>O hotel fica situado....Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <button type="button">Explore</button>
+      </div>
+    </section>
+    <section class="section-c">
+      <div class="wrapper">
+        <h2>Book Now</h2>
+        <p class="tel-number">0800 3345-4459</p>
+        <p>
+           Book agora mesmo online ou ligue para fazer sua reserva</p>
+        <button type="button" name="book-online">Book online</button>
+        <button type="button" name="book-tel">Ligue-nos</button>
+      </div>
+    </section>
+    <section class="section-d" id="serv">
+      <div class="title">
+        <h2>Serviços</h2>
+      </div>
+      <div class="amenities">
+        <div class="ico"><i class="fa fa-bath fa-2x"></i></div>
+        <h4>Bath</h4>
+        <p>
+           Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+      </div>
+      <div class="amenities">
+        <div class="ico"><i class="fa fa-cutlery fa-2x"></i></div>
+        <h4>Meals</h4>
+        <p>Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+      </div>
+      <div class="amenities">
+        <div class="ico"><i class="fa fa-coffee fa-2x"></i></div>
+        <h4>Coffee</h4>
+        <p>Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+      </div>
+      <div class="amenities">
+        <div class="ico"><i class="fa fa-bed fa-2x"></i></div>
+        <h4>Bed</h4>
+        <p>
+           Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+      </div>
+      <div class="amenities">
+        <div class="ico"><i class="fa fa-shower fa-2x"></i></div>
+        <h4>Shower</h4>
+        <p>Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+      </div>
+      <div class="amenities">
+        <div class="ico"><i class="fa fa-wifi fa-2x"></i></div>
+        <h4>Wifi</h4>
+        <p>Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+      </div>
+      <div class="btn">
+        <button type="button" name="book">Book Now</button>
+      </div>
+    </section>
+    <section class="section-e" id="depo">
+      <div class="wrapper">
+        <h2>Depoimentos</h2>
+        <blockquote><i class="fa fa-quote-left fa-2x"> </i><span>Robert Delnilo</span>
+          <p>Eu fui neste hotel e me surprendi com o que vi ao passar o fim de semana por lá... div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste consequuntur error natus iure aut, ipsum vel incidunt maiores rem? Iusto? div Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta aspernatur rerum ut consectetur, quo natus.</p>
+        </blockquote>
+      </div>
+    </section>
+    <section class="section-f" id="booking">
+      <div class="wrapper">
+        <h2>Reservas</h2>
+        <form action="#" method="post">
+          <div class="form-group"><span>Nome</span>
+            <input type="text" name="nome"/><span>Telefone</span>
+            <input type="tel" name="telefone"/>
+          </div>
+          <div class="form-group"><span>Email</span>
+            <input type="email" name="email"/><span>Endereco</span>
+            <input type="text" name="endereco"/>
+          </div>
+          <div class="form-group">
+            <textarea name="name" placeholder="Mensagem"></textarea>
+          </div>
+          <div class="btn">
+            <button type="button" name="button">Reservar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div>Follow us on social media:</div>
+    <ul>
+      <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+    </ul>
+    <p>&copy; 2024 Hotel</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
