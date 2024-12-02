@@ -4,19 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://kit.fontawesome.com/6685965caf.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-</head><body class="container">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://kit.fontawesome.com/6685965caf.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <!--Datepicker styling and functionality-->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+</head>
+
+<body class="container">
+
   <header class="header">
     <div class="logo">
-      <img src="photos-videos/hotelLogophoto.png" alt="Hotel Logo" class="Logo">
+      <img src="photos-videos/newnewlogo.png" alt="Hotel Logo">
     </div>
     <div class="menu">
       <nav>
         <ul>
-          <li><a href="#">Hotel</a></li>
+          <li><a href="#">Home</a></li>
           <li><a href="#casino">Casino</a></li>
           <li><a href="#ameni">Amenities</a></li>
           <li><a href="#explore">Explore</a></li>
@@ -26,65 +41,110 @@
     </div>
     <div class="right-side">
       <ul>
-        <li><i class="fa fa-adjust">&nbsp;contrast</i></li>
-        <li><i class="fa fa-sign-in">&nbsp;sign-in</i></li>
-      </ul>
+        <li><button type="button" class="button-style">Book Now</button></li>
+    </ul>
     </div>
   </header>
+
   <main class="content">
-    <section class="hero">
+    <section class="main">
       <video class="background-video" autoplay loop muted playsinline>
         <source src="photos-videos/roomVideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="wrapper">
         <div class="title">
-          <h1>Rooms and Suites</h1>
+          <h1>Where Luxury Knows No Limits</h1>
         </div>
-        <div class="subtitle">
-          <h2>Melhor hotel de todos</h2>
+        <div class="booking-bar">
+          <div class="booking-section">
+            <label for="location">Where do you want to go?</label>
+            <select id="location">
+              <option value="Eclipse Hotel & Resort">Eclipse Hotel & Resort</option>
+              <option value="Phoenix">Phoenix</option>
+              <option value="Tucson">Tucson</option>
+              <option value="Scottsdale">Scottsdale</option>
+              <option value="Sedona">Sedona</option>
+              <option value="Flagstaff">Flagstaff</option>
+              <option value="Mesa">Mesa</option>
+              <option value="Yuma York">Yuma York</option>
+            </select>
+          </div>
+          <div class="booking-section">
+            <label for="checkin">Check-In</label>
+            <input type="date" id="checkin" />
+          </div>
+          <div class="booking-section">
+            <label for="checkout">Check-Out</label>
+            <input type="date" id="checkout" />
+          </div>
+          <div class="booking-section">
+            <button class="book-now-btn">Book Now</button>
+          </div>
         </div>
-        <div class="text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <div class="features-bar">
+          <div class="feature">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Best Rate Guarantee</span>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-arrow-right"></i>
+            <span>Free Express Checkout</span>
+          </div>
+          <div class="feature">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Free 48-Hour Cancellation</span>
+          </div>
+          <div class="feature">
+            <i class="fa-regular fa-credit-card"></i>
+            <span>Save Now, Pay Later</span>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-crown"></i>
+            <span>Exclusive Member Pricing</span>
+          </div>
         </div>
-        <div class="btn">
-          <button type="button" name="book-online">Book online</button>
-          <button type="button" name="book-tel">Ligue-nos</button></button>
-        </div>
-        <div class="slide"><i class="fa fa-circle-o">&nbsp;</i><i class="fa fa-circle">&nbsp;</i><i class="fa fa-circle"></i></div>
       </div>
     </section>
     <section class="section-a">
       <div class="section-a-wrapper">
-        <div class="title">
-          <h2>Bem vindo</h2>
-        </div>
-        <div>
+        <div class="content">
+          <h2>Welcome to Eclipse Hotel</h2>
           <p>
-             O hotel San Diego é um dos mais antigos da cidade do Novo Mexico, mas aliado ao que há de contemporâneo, você não se sentirá em um local parado no tempo. Portanto, seja bem vindo!</p>
+            Nestled in a scenic, breathtaking location, Eclipse Hotel and Resort combines the allure of world-class luxury with a vibrant and exciting atmosphere.<br></br> Our elegant accommodations, exceptional amenities, and exclusive casino are designed for those who seek sophistication and excitement, all under one roof. Whether you are here for a relaxing getaway or a thrilling escape, Eclipse Hotel and Resort offers an unparalleled experience of indulgence and adventure.
+          </p>
+          <a href="#about" class="btn">Discover More</a>
         </div>
-        <div>
-          <button type="button" name="book">Book</button>
+        <div class="image-container">
+          <img src="photos-videos/gameRoom2.jpg" alt="Eclipse Hotel View">
         </div>
       </div>
     </section>
+    
     <section class="section-b" id="casino">
-      <div><img src="https://static.pexels.com/photos/280492/pexels-photo-280492.jpeg"/>
-        <h3>Localizacão</h3>
-        <p>
-           O hotel fica situado....Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <button type="button" name="button">Veja</button>
-      </div>
-      <div><img src="https://static.pexels.com/photos/279813/pexels-photo-279813.jpeg"/>
-        <h3>Interior</h3>
-        <p>
-           O hotel fica situado....Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <button type="button" name="button">Conheça</button>
-      </div>
-      <div><img src="https://static.pexels.com/photos/90319/pexels-photo-90319.jpeg"/>
-        <h3>Mobilia</h3>
-        <p>O hotel fica situado....Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <button type="button">Explore</button>
+      <div class="casino-carousel">
+        <div class="carousel-slide active">
+          <img src="photos-videos/casino.jpg" alt="Casino Image 1">
+          <div class="carousel-text">
+            <h3>Exhilarating Gaming</h3>
+            <p>Enjoy world-class casino games in an upscale, luxurious setting.</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos-videos/gameRoom.jpg" alt="Casino Image 2">
+          <div class="carousel-text">
+            <h3>Exclusive VIP Experience</h3>
+            <p>Indulge in VIP treatment with private gaming tables and exclusive access.</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="photos-videos/food.jpg" alt="Casino Image 3">
+          <div class="carousel-text">
+            <h3>Unmatched Entertainment</h3>
+            <p>Enjoy live shows, gourmet dining, and the excitement of high-stakes gaming.</p>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section-c">
@@ -99,7 +159,7 @@
     </section>
     <section class="section-d" id="ameni">
       <div class="title">
-        <h2>Serviços</h2>
+        <h2>Amenities</h2>
       </div>
       <div class="amenities">
         <div class="ico"><i class="fa fa-bath fa-2x"></i></div>
@@ -145,24 +205,28 @@
       </div>
     </section>
     <section class="section-f" id="booking">
-      <div class="wrapper">
-        <h2>Reservas</h2>
-        <form action="#" method="post">
-          <div class="form-group"><span>Nome</span>
-            <input type="text" name="nome"/><span>Telefone</span>
-            <input type="tel" name="telefone"/>
-          </div>
-          <div class="form-group"><span>Email</span>
-            <input type="email" name="email"/><span>Endereco</span>
-            <input type="text" name="endereco"/>
-          </div>
-          <div class="form-group">
-            <textarea name="name" placeholder="Mensagem"></textarea>
-          </div>
-          <div class="btn">
-            <button type="button" name="button">Reservar</button>
-          </div>
-        </form>
+      <h2>FQA</h2>
+      <div class="tabs">
+        <ul class="tab-list">
+          <li class="tab-item">
+            <a href="#" class="tab-link">Question 1</a>
+            <div class="tab-content">
+              <p>Answer to Question 1</p>
+            </div>
+          </li>
+          <li class="tab-item">
+            <a href="#" class="tab-link">Question 2</a>
+            <div class="tab-content">
+              <p>Answer to Question 2</p>
+            </div>
+          </li>
+          <li class="tab-item">
+            <a href="#" class="tab-link">Question 3</a>
+            <div class="tab-content">
+              <p>Answer to Question 3</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
