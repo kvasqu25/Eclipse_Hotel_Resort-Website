@@ -748,62 +748,233 @@ input[type="date"] {
 
                                             /* MEDIA SIZE */
 
-@media (max-width: 799px) {
-  .header, .main, 
-  .section-a, .section-b, 
-  .section-c, .section-d, 
-  .section-e, .section-f, 
-  .content-list, .footer {
-    display: flex;
+/* Mobile devices (width up to 600px) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    padding-top: 50px;
+  }
+
+  .header {
+    padding: 20px 10px;
+    height: 50px;
+  }
+
+  .logo img {
+    width: 120px;
+    padding-top: 30px;
+  }
+
+  .menu nav ul {
     flex-direction: column;
+    align-items: center;
   }
-  
-  .header .menu ul, .right-side ul {
-    padding: 0;
+
+  .menu li {
+    margin-left: 0;
+    margin-bottom: 10px;
   }
-  .header .menu ul li, .right-side ul li {
-    display: block;
-    margin: 0 5px 16px 0;
-    padding: 0;
-  }
+
   .main {
-    height: 80vh;
-    justify-content: center;
+    grid-template-columns: 1fr;
+    padding: 0 10px;
   }
+
   .main h1 {
-    font-size: 5rem;
+    font-size: 30px;
+    padding-top: 100px;
   }
+
+  .wrapper button {
+    padding: 10px 15px;
+  }
+
+  .booking-bar {
+    flex-direction: column;
+    padding-left: 5px;
+  }
+
+  .features-bar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .section-a {
+    padding: 60px 10px;
+  }
+
+  .section-a-wrapper {
+    flex-direction: column;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .image-container img {
+    transform: scale(1);
+  }
+
   .section-b {
-    align-items: center;
+    height: 60vh;
   }
-  .section-c {
-    height: 90vh;
-    align-items: center;
-    padding: 10px;
+
+  .section-c h2 {
+    font-size: 2rem;
   }
-  .section-d {
-    align-items: center;
+
+  .section-d h2 {
+    font-size: 2rem;
   }
-  .section-e {
-    height: 90vh;
-    justify-content: center;
-    align-items: center;
+
+  .section-d .amenities {
+    grid-template-columns: 1fr 1fr;
   }
-  .section-f .form-group {
-    height: auto;
-    padding: 10px;
+}
+
+/* Tablets and small desktops (600px to 1024px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+    padding-top: 60px;
   }
-  .section-f .form-group {
-    display: block;
+
+  .header {
+    padding: 25px 15px;
+    height: 55px;
   }
-  .section-f .btn {
-    text-align: center;
+
+  .logo img {
+    width: 150px;
+    padding-top: 40px;
   }
-  .form-group input {
-    display: block;
-    margin-bottom: 5px;
+
+  .menu nav ul {
+    flex-direction: row;
   }
-  .form-group span {
-    border-bottom: none;
+
+  .menu li {
+    margin-left: 15px;
+  }
+
+  .main {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .main h1 {
+    font-size: 40px;
+    padding-top: 140px;
+  }
+
+  .wrapper button {
+    padding: 8px 25px;
+  }
+
+  .booking-bar {
+    flex-direction: row;
+    padding-left: 8px;
+  }
+
+  .features-bar {
+    flex-direction: row;
+    padding: 12px 8px;
+  }
+
+  .section-a {
+    padding: 70px 15px;
+  }
+
+  .section-a-wrapper {
+    flex-direction: row;
+    max-width: 90%;
+  }
+
+  .section-b {
+    height: 70vh;
+  }
+
+  .section-c h2 {
+    font-size: 2.2rem;
+  }
+
+  .section-d h2 {
+    font-size: 2.2rem;
+  }
+
+  .section-d .amenities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large desktops (1024px and above) */
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
+    padding-top: 70px;
+  }
+
+  .header {
+    padding: 35px 20px;
+    height: 60px;
+  }
+
+  .logo img {
+    width: 180px;
+    padding-top: 50px;
+  }
+
+  .menu nav ul {
+    flex-direction: row;
+  }
+
+  .menu li {
+    margin-left: 20px;
+  }
+
+  .main {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0 20px;
+  }
+
+  .main h1 {
+    font-size: 50px;
+    padding-top: 180px;
+  }
+
+  .wrapper button {
+    padding: 8px 20px;
+  }
+
+  .booking-bar {
+    flex-direction: row;
+    padding-left: 10px;
+  }
+
+  .features-bar {
+    flex-direction: row;
+    padding: 15px 10px;
+  }
+
+  .section-a {
+    padding: 80px 20px;
+  }
+
+  .section-a-wrapper {
+    flex-direction: row;
+    max-width: 1200px;
+  }
+
+  .section-b {
+    height: 100vh;
+  }
+
+  .section-c h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-d h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-d .amenities {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
