@@ -165,7 +165,7 @@ window.onload = function() {
     localStorage.setItem('checkin', checkinDate);
     localStorage.setItem('checkout', checkoutDate);
     
-    // Optionally, alert the user or provide feedback
+    // Alert
     alert('Booking details saved!');
   });
   
