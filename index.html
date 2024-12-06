@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="styles.css">
 
-  <script src="https://kit.fontawesome.com/6685965caf.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6685965caf.js" crossorigin="anonymous"></script> <!--Icons-->
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
@@ -15,10 +15,14 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-  <!--Datepicker styling and functionality-->
+  <!-- jQuery UI Tabs-->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Photos and videos by pexels and unsplash -->
 
 </head>
 
@@ -26,7 +30,7 @@
 
   <header class="header">
     <div class="logo">
-      <img src="photos-videos/newnewlogo.png" alt="Hotel Logo">
+      <img src="photos-videos/newcolorLogo.png" alt="Hotel Logo">
     </div>
     <div class="menu">
       <nav>
@@ -35,7 +39,7 @@
           <li><a href="#casino">Casino</a></li>
           <li><a href="#ameni">Amenities</a></li>
           <li><a href="#explore">Explore</a></li>
-          <li><a href="#booking">Booking</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
     </div>
@@ -54,7 +58,8 @@
       </video>
       <div class="wrapper">
         <div class="title">
-          <h1>Where Luxury Knows No Limits</h1>
+          <h1>Experience Luxury Like Never Before</h1>
+          <h3>Book Your Stay Today</h3>
         </div>
         <div class="booking-bar">
           <div class="booking-section">
@@ -72,17 +77,16 @@
           </div>
           <div class="booking-section">
             <label for="checkin">Check-In</label>
-            <input type="date" id="checkin" />
+            <input type="date" id="checkin">
           </div>
           <div class="booking-section">
             <label for="checkout">Check-Out</label>
-            <input type="date" id="checkout" />
+            <input type="date" id="checkout">
           </div>
           <div class="booking-section">
             <button class="book-now-btn">Book Now</button>
           </div>
         </div>
-        
         <div class="features-bar">
           <div class="feature">
             <i class="fa-solid fa-circle-check"></i>
@@ -112,7 +116,7 @@
         <div class="content">
           <h2>Welcome to Eclipse Hotel</h2>
           <p>
-            Nestled in a scenic, breathtaking location, Eclipse Hotel and Resort combines the allure of world-class luxury with a vibrant and exciting atmosphere.<br></br> Our elegant accommodations, exceptional amenities, and exclusive casino are designed for those who seek sophistication and excitement, all under one roof. Whether you are here for a relaxing getaway or a thrilling escape, Eclipse Hotel and Resort offers an unparalleled experience of indulgence and adventure.
+            Nestled in a scenic, breathtaking location, Eclipse Hotel and Resort combines the allure of world-class luxury with a vibrant and exciting atmosphere.<br>Our elegant accommodations, exceptional amenities, and exclusive casino are designed for those who seek sophistication and excitement, all under one roof. Whether you are here for a relaxing getaway or a thrilling escape, Eclipse Hotel and Resort offers an unparalleled experience of indulgence and adventure.
           </p>
           <a href="#about" class="btn">Discover More</a>
         </div>
@@ -149,97 +153,115 @@
     </section>
     <section class="section-c">
       <div class="wrapper">
-        <h2>Book Now</h2>
-        <p class="tel-number">0800 3345-4459</p>
-        <p>
-           Book agora mesmo online ou ligue para fazer sua reserva</p>
-        <button type="button" name="book-online">Book online</button>
-        <button type="button" name="book-tel">Ligue-nos</button>
+        <h2>Special Offers</h2>
+        <p>Explore our exclusive deals and packages, carefully curated to make your stay unforgettable.</p>
+        <ul class="offers-list">
+          <li>
+            <strong>Weekend Getaway:</strong> Book a 2-night stay and save 15%.
+          </li>
+          <li>
+            <strong>Family Package:</strong> Complimentary breakfast for kids under 12.
+          </li>
+          <li>
+            <strong>Early Bird Discount:</strong> Save up to 20% on advance bookings.
+          </li>
+          <li>
+            <strong>Spa Retreat:</strong> Enjoy a free 30-minute massage with your stay.
+          </li>
+        </ul>
+        <button type="button" class="cta-button">View All Offers</button>
       </div>
-    </section>
-    <section class="section-d" id="ameni">
+    </section>    
+    <section class="section-d" id="ameni"> 
       <div class="title">
         <h2>Amenities</h2>
       </div>
       <div class="amenities">
         <div class="ico"><i class="fa fa-bath fa-2x"></i></div>
-        <h4>Bath</h4>
-        <p>
-           Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+        <h4>Luxury Bath</h4>
+        <p>Relax in our spacious and luxurious bathtubs, designed for ultimate comfort and style.</p>
       </div>
       <div class="amenities">
         <div class="ico"><i class="fa fa-cutlery fa-2x"></i></div>
-        <h4>Meals</h4>
-        <p>Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+        <h4>Gourmet Dining</h4>
+        <p>Enjoy a wide selection of meals prepared by world-class chefs, catering to all tastes.</p>
       </div>
       <div class="amenities">
         <div class="ico"><i class="fa fa-coffee fa-2x"></i></div>
-        <h4>Coffee</h4>
-        <p>Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+        <h4>Complimentary Coffee</h4>
+        <p>Savor freshly brewed coffee, available 24/7 to keep you refreshed throughout your stay.</p>
       </div>
       <div class="amenities">
         <div class="ico"><i class="fa fa-bed fa-2x"></i></div>
-        <h4>Bed</h4>
-        <p>
-           Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+        <h4>Cozy Beds</h4>
+        <p>Experience restful nights with our premium mattresses and luxurious linens.</p>
       </div>
       <div class="amenities">
         <div class="ico"><i class="fa fa-shower fa-2x"></i></div>
-        <h4>Shower</h4>
-        <p>Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+        <h4>Rain Showers</h4>
+        <p>Indulge in a rejuvenating experience with our modern rain shower facilities.</p>
       </div>
       <div class="amenities">
         <div class="ico"><i class="fa fa-wifi fa-2x"></i></div>
-        <h4>Wifi</h4>
-        <p>Agente faz isso e faz aquilo e também mais uma coisinha, sem falar no bom atendimento</p>
+        <h4>High-Speed Wi-Fi</h4>
+        <p>Stay connected with complimentary high-speed internet access throughout the property.</p>
       </div>
-      <div class="btn">
-        <button type="button" name="book">Book Now</button>
-      </div>
-    </section>
+    </section>    
     <section class="section-e" id="explore">
       <div id="dynamic-content">
-        <h2>Explore Nearby Restaurants</h2>
+        <h2>Explore Nearby Atractions</h2>
         <ul id="content-list"></ul>
         <button id="load-more" class="btn">Load More</button>
       </div>
     </section>
-    <section class="section-f" id="booking">
-      <h2>FQA</h2>
-      <div class="tabs">
-        <ul class="tab-list">
-          <li class="tab-item">
-            <a href="#" class="tab-link">Question 1</a>
-            <div class="tab-content">
-              <p>Answer to Question 1</p>
-            </div>
-          </li>
-          <li class="tab-item">
-            <a href="#" class="tab-link">Question 2</a>
-            <div class="tab-content">
-              <p>Answer to Question 2</p>
-            </div>
-          </li>
-          <li class="tab-item">
-            <a href="#" class="tab-link">Question 3</a>
-            <div class="tab-content">
-              <p>Answer to Question 3</p>
-            </div>
-          </li>
-        </ul>
+    <section class="section-f" id="faq">
+      <h2>FAQ</h2>
+      <div id="accordion">
+        <h3>What are the check-in and check-out times?</h3>
+        <div>
+          <p>Check-in starts at 3:00 PM, and check-out is until 11:00 AM.</p>
+        </div>
+        <h3>Do you offer airport shuttle services?</h3>
+        <div>
+          <p>Yes, we provide complimentary airport shuttle services. Please schedule in advance.</p>
+        </div>
+        <h3>Are pets allowed at the hotel?</h3>
+        <div>
+          <p>Pets are welcome in designated rooms. An additional cleaning fee of $50 applies.</p>
+        </div>
+        <h3>Is Wi-Fi available in all rooms?</h3>
+        <div>
+          <p>Yes, high-speed Wi-Fi is complimentary and available throughout the hotel.</p>
+        </div>
       </div>
-    </section>
+    </section>    
   </main>
   <footer class="footer">
-    <div>Follow us on social media:</div>
-    <ul>
-      <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-    </ul>
-    <p>&copy; 2024 Hotel</p>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>Eclipse Hotel & Resort</h3>
+        <p>Experience luxury like never before. Book your stay today.</p>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <ul class="social-list">
+          <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: Eclipse@hotel.com</p>
+        <p>Phone: 1-800-123-4567</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Eclipse Hotel & Resort. All Rights Reserved.</p>
+    </div>
   </footer>
+  
   <script src="script.js"></script>
 </body>
 </html>

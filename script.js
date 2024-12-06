@@ -1,107 +1,143 @@
 
 "use strict";
 
-// Ajax/API: I used a third-party API (Yelp) to fetch nearby tourist attractions //
+// Photos and videos by pexels and unsplash 
 
-$(document).ready(function() {
-    let offset = 0;
 
-    // Function to load content from Yelp API
-    function loadContent() {
-        $.ajax({
-            url: 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search',
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer ikqcytwuSXvipC-uQ9zk6tM2B4mgodVtHylGsVOyL5soEFqr1_01wAPsd-XMv6JMiMbm93HfpVr-wRV1FBjikoHOJRVw0qgfmaDNr131N77-B1xClMDU-BwA1n1JZ3Yx',
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            data: {
-                location: 'Phoenix', 
-                term: 'tourist attractions', 
-                limit: 3, 
-                offset: offset 
-            },
-            success: function(data) {
-                const contentList = $('#content-list');
-                
-                // Clear the existing content before adding new items
-                contentList.empty();
+///////// Ajax/API: Fetch nearby tourist attractions /////////////////////
 
-                // Append new content to the list
-                data.businesses.forEach(item => {
-                    contentList.append(`
-                        <li>
-                            <h3><a href="${item.url}" target="_blank" class="yelp-title">${item.name}</a></h3>
-                            <p>${item.location.address1}, ${item.location.city}, ${item.location.state}</p>
-                            <p>Rating: ${item.rating} ⭐ (${item.review_count} reviews)</p>
-                            <img src="${item.image_url}" alt="${item.name}" style="width: 200px; height: 100;">
-                        </li>
-                    `);
-                });
 
-                // Update the offset to load the next set of results
-                offset += 3;
-            },
-            error: function() {
-                $('#dynamic-content').append('<p>Error loading content.</p>');
-            }
+//Using Unspash API since Mapbox doesn't have images
+const UNSPLASH_ACCESS_KEY = "QDCiYtOZ5Y1Ox2kHrTeGAiSbSmm11QE5_tW8xME3XLI";  
+const IMAGE_PER_PAGE = 1; 
+const IMAGE_QUERY = "attraction"; 
+
+let currentPage = 1;
+const maxResultsPerPage = 4; 
+const contentList = document.getElementById("content-list");
+const loadMoreButton = document.getElementById("load-more");
+let clickCount = 0;
+
+const locations = [
+  { lat: 33.4255, lng: -111.9400, name: "Tempe" },
+  { lat: 33.4484, lng: -112.0740, name: "Phoenix" },
+  { lat: 33.4152, lng: -111.8315, name: "Mesa" },
+];
+
+function fetchImageFromUnsplash(query) {
+  return fetch(`https://api.unsplash.com/photos/random?query=${query}&client_id=${UNSPLASH_ACCESS_KEY}&count=${IMAGE_PER_PAGE}`)
+    .then(response => response.json())
+    .then(data => {
+      return data[0] ? data[0].urls.small : null; 
+    })
+    .catch(err => console.error("Error fetching image from Unsplash:", err));
+}
+
+
+
+///Mapbox API 
+function getNearbyAttractions(lat, lng, page = 1) {
+  const token = "pk.eyJ1Ijoia3Zhc3F1MjUiLCJhIjoiY200YXFsNzZ4MGFzdzJrbjZhaGc5dTg4YiJ9.I_6JBRSuo-aKc9X1zc9Frg";
+  const endpoint = `https://api.mapbox.com/geocoding/v5/mapbox.places/landmark.json?proximity=${lng},${lat}&access_token=${token}&limit=${maxResultsPerPage}&types=poi&page=${page}`;
+
+  fetch(endpoint)
+    .then(response => response.json())
+    .then(data => {
+      if (data.features && data.features.length > 0) {
+        let html = "";
+
+        // Iterate through each feature and fetch the image
+        const imagePromises = data.features.map((feature) => {
+          return fetchImageFromUnsplash(IMAGE_QUERY).then(image => {
+            html += `
+              <li class="attraction-item">
+                <img src="${image}" alt="${feature.text}" class="attraction-img">
+                <div class="attraction-details">
+                  <h3>${feature.text}</h3>
+                  <p>${feature.place_name}</p>
+                </div>
+              </li>
+            `;
+          });
+        }); 
+
+        // After all images are fetched, add them to the list
+        Promise.all(imagePromises).then(() => {
+          contentList.innerHTML += html; // Add all content at once after images are fetched
         });
-    }
 
-    // Initially load the first set of content
-    loadContent();
-
-    // Handle the "Load More" button
-    $('#load-more').click(function() {
-        loadContent(); // Load the next set of results
+        currentPage++;
+      } else {
+        loadMoreButton.disabled = true;
+        loadMoreButton.textContent = "No more results";
+      }
+    })
+    .catch(error => {
+      console.error("Error fetching Mapbox data:", error);
+      loadMoreButton.disabled = true;
+      loadMoreButton.textContent = "Failed to load data";
     });
+}
+
+function loadAttractions() {
+  if (clickCount < 3) {
+    const currentLocation = locations[clickCount % locations.length];
+    getNearbyAttractions(currentLocation.lat, currentLocation.lng, currentPage);
+    clickCount++;
+
+    if (clickCount >= 3) {
+      loadMoreButton.disabled = true;
+      loadMoreButton.textContent = "No more results";
+    }
+  }
+}
+
+// Initial attraction load for city
+getNearbyAttractions(33.4255, -111.9400);
+
+// Attach event listener to the load more button
+loadMoreButton.addEventListener("click", loadAttractions);
+
+
+
+
+                                               /////////Slideshow/Carousel | Casino//////////////
+
+ $(document).ready(function() {
+
+  // Function to change the active slide
+  function changeSlide() {
+    var currentSlide = $(".carousel-slide.active");
+    var nextSlide = currentSlide.next(".carousel-slide").length > 0 ? currentSlide.next(".carousel-slide") : $(".carousel-slide").first();
+
+    currentSlide.removeClass("active");
+    nextSlide.addClass("active");
+  }
+
+  // Change slides every 3 seconds (3000ms)
+  setInterval(changeSlide, 3000);
 });
 
 
 
-////Slideshow/Carousel
-
-  $(document).ready(function(){
-    $('.casino-carousel').slick({
-        autoplay: true,             // Enable autoplay
-        autoplaySpeed: 3000,        // 3-second delay between slides for faster transitions
-        dots: true,                 // Show navigation dots for easy navigation
-        arrows: true,               // Show navigation arrows
-        infinite: true,             // Infinite looping of slides
-        speed: 600,                 // Slightly quicker transition speed
-        fade: true,                 // Elegant fade transition effect
-        slidesToShow: 1,            // Display 1 slide at a time
-        slidesToScroll: 1           // Scroll 1 slide at a time
-        
-    });
+                                      /////////// jQuery Widget/Plugin | Tabs for FAQ ///////////////////////////
+$(document).ready(function() {
+  $("#accordion").accordion({
+    collapsible: true,  // Allows all panels to collapse
+    active: false,      // Ensures no panel is open initially
+    heightStyle: "content" // Adjusts to the height of the content
   });
+});
 
 
-  //jQuery Widget/Plugin tabs
-  $(document).ready(function() {
-    
-    $(".tab-link").click(function(e) {
-      e.preventDefault(); // Prevent the default anchor behavior
-      
-      // Toggle the visibility of the corresponding content
-      var content = $(this).next(".tab-content");
-      
-      // Slide up all tab content
-      $(".tab-content").not(content).slideUp().removeClass("active");
-      
-      // Slide down the clicked tab content
-      content.stop(true, true).slideToggle().toggleClass("active");
-    });
-  });
-  
   
 
-  ///store data
+                                       /////////////Store Data | Booking ///////
 
   // When the page loads, check if there's any data in localStorage and display it
 window.onload = function() {
     const storedCity = localStorage.getItem('city');
-    const storedCheckin = localStorage.getItem('checkin');
+    const storedCheckin = localStorage.getItem('checkin');  
     const storedCheckout = localStorage.getItem('checkout');
     
     // If data is found in localStorage, display it in the fields
