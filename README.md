@@ -1,4 +1,4 @@
-### **Eclipse Hotel & Resort Website Redesign**
+### **Eclipse Hotel & Resort Website **
 A luxury resort website designed to combine elegance with user-friendly functionality, aiming to increase bookings and engage visitors.
 
 #### **Background**
